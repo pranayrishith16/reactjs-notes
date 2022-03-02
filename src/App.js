@@ -24,7 +24,6 @@ function App() {
     text:"This is my fourth note",
     date:"18/04/2022"
   }]);
-  console.log(notes);
   return (
     <div className="container">
       <NoteList notes={notes}/>

@@ -41,3 +41,30 @@ code {
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 }
+
+.note.new{
+  background-color: #67d7cc;
+}
+
+textarea{
+  border: none;
+  resize: none;
+  font: inherit;
+  background-color: #67d7cc;
+}
+
+textarea:focus{
+  outline: none;
+}
+
+.save{
+  border: none;
+  background-color: #e1e1e1;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+}
+
+.save:hover{
+  background-color: #ededed;
+  cursor: pointer;
+}
