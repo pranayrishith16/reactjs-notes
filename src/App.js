@@ -24,9 +24,14 @@ function App() {
     text:"This is my fourth note",
     date:"18/04/2022"
   }]);
+
+  const addNote = (text) => {
+    console.log(text);
+  } 
+
   return (
     <div className="container">
-      <NoteList notes={notes}/>
+      <NoteList notes={notes} handleAddNote={addNote}/>
     </div>
   );
 }
