@@ -4,7 +4,7 @@ import './index.css';
 import NoteList from './components/NotesList';
 
 function App() {
-  const [notes, setnotes] = useState([{
+  const [notes, setNotes] = useState([{
     id:nanoid(),
     text:"This is my first note",
     date:"15/04/2022"
@@ -26,12 +26,24 @@ function App() {
   }]);
 
   const addNote = (text) => {
-    console.log(text);
+    const date = new Date();
+    const newNote = {
+      id:nanoid(),
+      text:text,
+      date:date.toLocaleDateString()
+    }
+    const newNotes = [...notes,newNote]
+    setNotes(newNotes);
   } 
+
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id)
+    setNotes(newNotes);
+  }
 
   return (
     <div className="container">
-      <NoteList notes={notes} handleAddNote={addNote}/>
+      <NoteList notes={notes} handleAddNote={addNote} handleDeleteNote={deleteNote}/>
     </div>
   );
 }
